@@ -6,8 +6,21 @@ import java.util.List;
 
 public class Test {
     public static void main(String[] args) {
-        test3();
+        test1();
     }
+
+    /**
+     * test1，集合中存储的是对象的引用，所以集合中最终的值都是相同的
+     *
+     * test2 和 test3 ，存储的是常量，所以不存在这个问题。
+     *
+     *
+     */
+
+
+
+
+
 
     public static void test1(){
         List<String> list = new ArrayList<>();
