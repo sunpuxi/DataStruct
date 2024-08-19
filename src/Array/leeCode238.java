@@ -27,7 +27,6 @@ public class leeCode238 {
         }
         return res;
     }
-
     public static void main(String[] args) {
         int[] nums = {1,2,3};
         int[] ints = productExceptSelf(nums);
