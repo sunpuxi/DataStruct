@@ -1,7 +1,5 @@
 package src.ListNode;
 
-import java.util.List;
-
 /**
  * BM1 反转链表
  * 1 -> 2 -> 3 -> 4
