@@ -1,6 +1,7 @@
 package src.Array;
 
 /**
+ * 最长公共前缀
  * 纵向扫描
  */
 public class 最长公共前缀 {

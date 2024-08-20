@@ -11,28 +11,23 @@ import src.TreeNode.TreeNode;
  */
 public class LeeCode105 {
     public TreeNode buildTree(int[] preorder, int[] inorder) {
-        int preLen = preorder.length;
-        int inLen = inorder.length;
-        return buildTree(preorder, 0, preLen - 1, inorder, 0, inLen - 1);
+        return buildTree(preorder, 0, preorder.length- 1, inorder, 0, inorder.length - 1);
     }
     private TreeNode buildTree(int[] preorder, int preLeft, int preRight,
                                int[] inorder, int inLeft, int inRight) {
-        // 因为是递归调用的方法，按照国际惯例，先写递归终止条件
-        if (preLeft > preRight || inLeft > inRight) {
-            return null;
-        }
-        // 先序遍历的起点元素很重要
-        int pivot = preorder[preLeft];
-        TreeNode root = new TreeNode(pivot);
-        int pivotIndex = inLeft;
-        // 严格上说还要做数组下标是否越界的判断 pivotIndex < inRight
-        while (inorder[pivotIndex] != pivot) {
-            pivotIndex++;
-        }
-        root.left = buildTree(preorder, preLeft + 1, pivotIndex - inLeft + preLeft,
-                inorder, inLeft, pivotIndex - 1);
-        root.right = buildTree(preorder, pivotIndex - inLeft + preLeft + 1, preRight,
-                inorder, pivotIndex + 1, inRight);
+        // 先写出来递归的终止条件
+        if (preLeft > preRight || inLeft > inRight) return null;
+        // 找到属于当前子树的根节点
+        int rootVal = preorder[preLeft];
+        TreeNode root = new TreeNode(rootVal);
+        // 在中序遍历结果中找到下标
+        int pivot = 0;
+        while(inorder[pivot] != rootVal) pivot++;
+        // 分别构造左右子树，难点，构建左子树的时候，需要找到左子树的前序遍历结果范围，在这个范围中构建
+        root.left = buildTree(preorder,preLeft + 1,pivot - inLeft + preLeft,
+                inorder,inLeft,pivot-1);
+        root.right = buildTree(preorder,pivot - inLeft + preLeft + 1,preRight,
+                inorder,pivot+1,inRight);
         return root;
     }
 }
