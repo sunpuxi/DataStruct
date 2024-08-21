@@ -17,22 +17,32 @@ public class LeeCode46 {
         }
     }
 
-    List<List<Integer>> res = new ArrayList<>();
-    LinkedList<Integer> path = new LinkedList<>();
+    List<List<Integer>> res = new ArrayList<>();  // 最终结果
+    LinkedList<Integer> path = new LinkedList<>();  // 单次结果收集
+    boolean[] used;  // 标记元素是否已经使用
 
-    boolean[] used;
     public List<List<Integer>> permute(int[] nums) {
+        // 初始化 used 数组
         used = new boolean[nums.length];
+        // 回溯
         backTrack(nums);
+        // 返回
         return res;
     }
 
+    /**
+     * 回溯
+     * @param nums 数组
+     */
     public void backTrack(int[] nums){
+        // 终止条件,手机结果，并回溯
         if (path.size() == nums.length){
             res.add(new ArrayList<>(path));
             return;
         }
-        for (int i = 0; i < nums.length; i++) {
+        // 回溯
+        for(int i=0;i< nums.length;i++){
+            // 判断当前元素是否已经使用过
             if (!used[i]){
                 path.add(nums[i]);
                 used[i] = true;
@@ -41,7 +51,7 @@ public class LeeCode46 {
             }
             backTrack(nums);
             path.removeLast();
-            used[i] = false;
+            used[i]=false;
         }
     }
 }
