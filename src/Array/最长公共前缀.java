@@ -20,4 +20,5 @@ public class 最长公共前缀 {
         }
         return strs[0];
     }
+    // test git
 }
