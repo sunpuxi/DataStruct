@@ -1,7 +1,5 @@
 package src.sort;
 
-import java.util.Random;
-
 public class QuickSort {
     public static void quickSort(int[] arr, int low, int high) {
         if (low < high) {
@@ -27,17 +25,5 @@ public class QuickSort {
         arr[high] = temp;
 
         return i + 1;
-    }
-
-    public static void main(String[] args) {
-        int arr[] = new int[10000];
-        Random r = new Random();
-        for (int i : arr) {
-            arr[i] = r.nextInt();
-        }
-        long start = System.currentTimeMillis();
-        quickSort(arr,0,arr.length-1);
-        long end = System.currentTimeMillis();
-        System.out.println(end- start);
     }
 }

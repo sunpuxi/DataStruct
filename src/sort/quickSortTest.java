@@ -23,13 +23,12 @@ public class quickSortTest {
      * @param i  数组的起始索引
      * @param j  数组的结束索引
      */
-    public static void quickSort(int arr[],int i,int j){
+    public static void quickSort(int[] arr, int i, int j){
         int start = i,end = j;
         //递归的出口
         if(start >= end) return;
         //第一遍找出第一个元素在数组中的位置
         int pivot = arr[start];
-
         //找出 end 向前遍历比 pivot 小的数字，找出 start 向前遍历得到的数字，交换，然后重复这个过程
         while(start != end){
             while(true){
