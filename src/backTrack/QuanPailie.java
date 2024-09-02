@@ -26,7 +26,8 @@ public class QuanPailie {
     public void backTrack(int[] num){
         // 终止条件
         if (path.size() == num.length){
-            set.add(new ArrayList<>(path));
+             set.add(new ArrayList<>(path));
+            // res.add(new ArrayList<>(path));
             return;
         }
         // 遍历
@@ -39,14 +40,6 @@ public class QuanPailie {
             backTrack(num);
             path.remove(path.size()-1);
             used[i] = false;
-        }
-    }
-
-    public static void main(String[] args) {
-        QuanPailie quanPailie = new QuanPailie();
-        ArrayList<ArrayList<Integer>> permute = quanPailie.permute(new int[]{1, 1, 2});
-        for (ArrayList<Integer> integers : permute) {
-            System.out.println(integers.toString());
         }
     }
 }
