@@ -22,7 +22,7 @@ public class ReverseListNodeFromMToN {
         }
         left = pre;
         // 开始反转
-        while(k>0 && cur != null){
+        while(k > 0 && cur != null){
             ListNode temp = cur.next;
             cur.next = pre;
             pre = cur;
