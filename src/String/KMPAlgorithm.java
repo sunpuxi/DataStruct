@@ -1,13 +1,7 @@
 package src.String;
 
 public class KMPAlgorithm {
-    
-    /**
-     * KMP算法实现，返回模式串在主串中的起始索引，如果不存在则返回-1
-     * @param text 主串
-     * @param pattern 模式串
-     * @return 模式串在主串中的起始索引
-     */
+
     public static int kmpSearch(String text, String pattern) {
         int[] lps = computeLPSArray(pattern);
         int i = 0; // text的索引
