@@ -5,6 +5,7 @@ import java.util.LinkedList;
 
 /**
  * 测试双端队列的 API
+ * 结论：Deque 下面的 offer 和 poll 方法搭配是队列的特性，push 和 poll 搭配是栈的特性
  */
 public class DequeTest {
     public static void main(String[] args) {
