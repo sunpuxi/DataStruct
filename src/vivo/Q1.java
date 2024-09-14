@@ -30,7 +30,7 @@ public class Q1 {
             // 剩余的新员工
             int rest = numOfZero - numOfOne;
             // 新员工的分组
-            int g2 = 0;
+            int g2;
             if (rest % 3 == 0) g2 = rest/3;
             else{
                 rest = rest / 3 + rest % 3;
