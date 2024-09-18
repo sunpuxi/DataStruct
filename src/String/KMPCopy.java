@@ -3,6 +3,7 @@ package src.String;
 public class KMPCopy {
 
     public static int kmp(String text, String pattern) {
+        // 根据模式串计算前缀表
         int[] next = getNext(pattern);
         int i = 0;
         int j = 0;
@@ -12,8 +13,8 @@ public class KMPCopy {
                 j++;
             }
             if (j == pattern.length()){
-                return i-j;
-            } else if (i < text.length() && text.charAt(i) != pattern.charAt(j) ) {
+                return i - j;
+            } else if (i<text.length() && pattern.charAt(j) != text.charAt(i)) {
                 if (j != 0){
                     j = next[j-1];
                 }else{
@@ -29,15 +30,16 @@ public class KMPCopy {
         int[] next = new int[pattern.length()];
         next[0] = 0;
         int i = 1;
-        int len = 0;
+        int len = 0;  // 最长相等的前后缀
         while(i < pattern.length()){
             if (pattern.charAt(i) == pattern.charAt(len)){
                 len++;
                 next[i] = len;
                 i++;
             }else{
-                if (len != 0){
+                if (len != 0 ){
                     len = next[len-1];
+                    // 此处不能 i++，还需要继续判断第一层 if
                 }else{
                     next[i] = 0;
                     i++;
