@@ -1,5 +1,6 @@
 package src.map;
 
+import java.util.Deque;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -21,52 +22,49 @@ public class deadOrange {
      */
 
     public int orangesRotting(int[][] grid) {
-        int M = grid.length;
-        int N = grid[0].length;
-        Queue<int[]> queue = new LinkedList<>();
-
-        int count = 0; // 新鲜橘子的数量
-        for (int r = 0; r < M; r++) {
-            for (int c = 0; c < N; c++) {
-                if (grid[r][c] == 1) {
-                    count++;
-                } else if (grid[r][c] == 2) {
-                    queue.add(new int[] { r, c });
+        int m = grid.length;
+        int n = grid[0].length;
+        Deque<int[]> deque = new LinkedList<>();
+        int count = 0;
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if (grid[i][j] == 1) count++;
+                else if (grid[i][j] == 2) {
+                    deque.offer(new int[]{i,j});
                 }
             }
         }
-
-        int round = 0; // 需要的时间
-        while (count > 0 && !queue.isEmpty()) {
-            round++;
-            int n = queue.size();
-            for (int i = 0; i < n; i++) {
-                int[] orange = queue.poll();
-                int r = orange[0];
-                int c = orange[1];
-                if (r - 1 >= 0 && grid[r - 1][c] == 1) {
-                    grid[r - 1][c] = 2;
+        int time = 0;
+        while(!deque.isEmpty() && count > 0){
+            time++;
+            int size = deque.size();
+            for (int i = 0; i < size; i++) {
+                int[] poll = deque.poll();
+                int l1 = poll[0];
+                int l2 = poll[1];
+                if (l1 - 1 >=0 && grid[l1-1][l2] == 1){
                     count--;
-                    queue.add(new int[] { r - 1, c });
+                    grid[l1-1][l2] = 2;
+                    deque.offer(new int[]{l1-1,l2});
                 }
-                if (r + 1 < M && grid[r + 1][c] == 1) {
-                    grid[r + 1][c] = 2;
+                if (l1 + 1 <= grid.length-1 && grid[l1+1][l2] == 1){
                     count--;
-                    queue.add(new int[] { r + 1, c });
+                    grid[l1+1][l2] = 2;
+                    deque.offer(new int[]{l1+1,l2});
                 }
-                if (c - 1 >= 0 && grid[r][c - 1] == 1) {
-                    grid[r][c - 1] = 2;
+                if (l2 - 1 >=0 && grid[l1][l2-1] == 1){
                     count--;
-                    queue.add(new int[] { r, c - 1 });
+                    grid[l1][l2 - 1] = 2;
+                    deque.offer(new int[]{l1,l2 - 1});
                 }
-                if (c + 1 < N && grid[r][c + 1] == 1) {
-                    grid[r][c + 1] = 2;
+                if (l2 + 1 <= grid[0].length-1 && grid[l1][l2 + 1] == 1){
                     count--;
-                    queue.add(new int[] { r, c + 1 });
+                    grid[l1][l2 + 1] = 2;
+                    deque.offer(new int[]{l1,l2 + 1});
                 }
             }
         }
-        if(count > 0) return -1;
-        else return round;
+        if (count > 0) return -1;
+        else return time;
     }
 }
