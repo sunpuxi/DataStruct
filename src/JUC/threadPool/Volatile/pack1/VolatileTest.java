@@ -1,4 +1,4 @@
-package src.thread.threadPool.Volatile.pack1;
+package src.JUC.threadPool.Volatile.pack1;
 
 
 /**

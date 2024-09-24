@@ -1,4 +1,4 @@
-package src.thread.threadPool.Synchronized;
+package src.JUC.threadPool.Synchronized;
 
 import java.util.Arrays;
 import java.util.List;

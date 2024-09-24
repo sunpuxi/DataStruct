@@ -1,4 +1,4 @@
-package src.thread.threadPool.testExcutors;
+package src.JUC.threadPool.testExcutors;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;

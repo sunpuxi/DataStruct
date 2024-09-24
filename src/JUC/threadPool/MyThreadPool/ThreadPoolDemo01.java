@@ -1,4 +1,4 @@
-package src.thread.threadPool.MyThreadPool;
+package src.JUC.threadPool.MyThreadPool;
 
 public class ThreadPoolDemo01 {
 

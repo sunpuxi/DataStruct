@@ -1,4 +1,4 @@
-package src.thread.threadPool.ThreadDemo;
+package src.JUC.threadPool.ThreadDemo;
 
 public class ThreadStateDemo01 {
 

@@ -1,4 +1,4 @@
-package src.thread.threadPool.testExcutors;
+package src.JUC.threadPool.testExcutors;
 
 public class getRuntime {
 
