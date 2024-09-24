@@ -1,4 +1,4 @@
-package src.thread.threadPool.Volatile;
+package src.thread.threadPool.Volatile.pack1;
 
 public class VolatileThreadDemo01 {
     
@@ -14,8 +14,10 @@ public class VolatileThreadDemo01 {
         }
 
         /**
+         * 1、VolatileThread 的 flag 没有被 volatile 修饰时候。
          * 观察到的结果，先是 false 后变成 true
-         *
+         * 2、当VolatileThread 的 flag 被 volatile 修饰时候。
+         * 观察到的结果就全是 false 了。
          */
     }
 }
