@@ -26,4 +26,8 @@ public class Node<E> {
         this.prev = prev;
         this.next = next;
     }
+
+    public Node(E item){
+        this.item = item;
+    }
 }

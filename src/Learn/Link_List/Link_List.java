@@ -17,7 +17,7 @@ public class Link_List<E> {
      * 在头部插入节点
      */
     public void linkFirst(E element){
-        Node<E> node = new Node<>(null,null,element);
+        Node<E> node = new Node<>(element);
         // 获取当前的头节点
         Node<E> head = this.first;
         size++;
@@ -50,7 +50,7 @@ public class Link_List<E> {
      * 在尾部插入节点
      */
     public void linkTail(E element){
-        Node<E> node = new Node<>(null,null,element);
+        Node<E> node = new Node<>(element);
         // 获取当前的 tail 节点
         Node<E> last = this.tail;
         // 长度加一

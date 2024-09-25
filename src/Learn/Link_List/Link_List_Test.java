@@ -34,8 +34,11 @@ public class Link_List_Test {
             tail = tail.prev;
         }
         link_list.removeFirst(); // 1 3
+        System.out.println("删除第一个元素后的长度："+link_list.size);
         link_list.add(4);  // 1 3 4
+        System.out.println("加入尾巴元素后的长度："+link_list.size);
         link_list.removeLast(); // 1 3
+        System.out.println("删除最后一个元素后的长度："+link_list.size);
 
         System.out.println("========================");
         // 预期的元素顺序：1 3
