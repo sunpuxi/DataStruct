@@ -1,4 +1,4 @@
-package src.dynamicPlain;
+package src.dynamicPlan;
 
 
 /**
