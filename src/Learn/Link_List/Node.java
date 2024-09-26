@@ -10,11 +10,6 @@ public class Node<E> {
     Node<E> prev;  //指向前一个元素的指针
     Node<E> next;  //指向后一个元素的指针
 
-    private Node<E> first;  //头节点
-    private Node<E> tail;  //尾节点
-
-    public int size;  //长度
-
     /**
      * 有参数构造函数
      * @param prev pre
