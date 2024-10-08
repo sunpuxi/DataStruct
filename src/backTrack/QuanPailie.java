@@ -6,7 +6,6 @@ import java.util.Set;
 
 /**
  * 给定数组的全排列
- * (如果数组中有重复元素,如何对最终的排列结果去重,添加进一个 Set 中？)
  */
 public class QuanPailie {
 
