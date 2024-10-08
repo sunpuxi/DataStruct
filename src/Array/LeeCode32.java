@@ -18,13 +18,10 @@ public class LeeCode32 {
         while(i <= j){
             int mid = (i + j) >>> 1;
             if(nums[mid] == target ){
-                // 找到第一个比 target 小的数的索引
                 res[0] = mid;
                 j = mid-1;
             }else if (nums[mid] < target) {
                 i = mid+1;
-            } else if (nums[mid] > target) {
-                j = mid-1;
             }else {
                 j = mid-1;
             }
@@ -38,8 +35,6 @@ public class LeeCode32 {
             if(nums[mid] == target){
                 res[1] = mid;
                 i = mid + 1;
-            }else if (nums[mid] < target) {
-                i = mid+1;
             } else if (nums[mid] > target) {
                 j = mid-1;
             }else {
