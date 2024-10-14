@@ -24,9 +24,7 @@ public class TopK {
         for (int i = 0; i < freqList.length; i++) {
             freqList[i] = new ArrayList<>();
         }
-        counterMap.forEach((num, freq) -> {
-            freqList[freq].add(num);
-        });
+        counterMap.forEach((num, freq) -> freqList[freq].add(num));
         // 按照出现频次，从大到小遍历频次数组，构造返回结果。
         int[] res = new int[k];
         int idx = 0;
