@@ -1,25 +1,12 @@
 package src.ListNode;
 
-import java.util.Scanner;
-
-
+/**
+ * 不是用额外的空间
+ * 时间复杂度：O（n）
+ * 空间复杂度：O（1）
+ */
 public class isHuiWenListNodeFirst {
-
-    public static void main(String[] args) {
-        Scanner sc= new Scanner(System.in);
-        int n = sc.nextInt();  //链表的节点的个数
-        ListNode head = new ListNode(sc.nextInt());
-        ListNode pre = head;
-        while (n>1){
-            n--;
-            pre.next = new ListNode(sc.nextInt());
-            pre = pre.next;
-        }
-        System.out.println(isOrNot(head));
-    }
-
-
-    public static boolean isOrNot(ListNode head){
+    public  boolean isOrNot(ListNode head){
         if (head == null || head.next == null) return true;
         ListNode left = head;
         ListNode right;
