@@ -14,7 +14,7 @@ public class 相交链表 {
      * @return
      */
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
-        if(headA == null || headB==null ) return null;
+        if(headA == null || headB == null ) return null;
         Map<ListNode,Integer> map = new HashMap<>();
         while(headA!=null){
             map.put(headA,1);
