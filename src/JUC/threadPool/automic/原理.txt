@@ -1,7 +1,0 @@
-AtomicInteger的本质：自旋锁 + CAS算法
-
-CAS的全称是： Compare And Swap(比较再交换); 是现代CPU广泛支持的一种对内存中的共享数据进行操作的一种特殊指令。
-CAS可以将read-modify-write转换为原子操作，这个原子操作
-
-直接由处理器保证。CAS有3个操作数，内存值V，旧的预期值A，要修改的新值B。
-当且仅当旧预期值A和内存值V相同时，将内存值V修改为B并返回true，否则什么都不做，并返回false。
