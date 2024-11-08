@@ -1,19 +1,13 @@
 package src.sort;
 
-import java.util.Random;
-
 public class quickSortTest {
 
     public static void main(String[] args) {
-        int arr[] = new int[100000];
-        Random r = new Random();
-        for (int i : arr) {
-            arr[i] = r.nextInt();
-        }
-        long start = System.currentTimeMillis();
+        int[] arr = new int[]{5,2,7,12,0,3,45};
         quickSort(arr,0,arr.length-1);
-        long end = System.currentTimeMillis();
-        System.out.println(end- start);
+        for (int i : arr) {
+            System.out.println(i);
+        }
     }
 
 
@@ -25,36 +19,19 @@ public class quickSortTest {
      */
     public static void quickSort(int[] arr, int i, int j){
         int start = i,end = j;
-        //递归的出口
-        if(start >= end) return;
-        //第一遍找出第一个元素在数组中的位置
-        int pivot = arr[start];
-        //找出 end 向前遍历比 pivot 小的数字，找出 start 向前遍历得到的数字，交换，然后重复这个过程
-        while(start != end){
-            while(true){
-                if(end <= start || arr[end] < pivot){
-                    break;
-                }
-                end--;
-            }
-            while(true){
-                if(end <= start || arr[start] > pivot){
-                    break;
-                }
-                start++;
-            }
-            //交换元素
+        if (start >= end) return;
+        int pivot = arr[i];
+        while(start < end){
+            // 先找后面
+            while(start < end && arr[end] >= pivot) end--;
+            while (start < end && arr[start] <= pivot) start++;
             int temp = arr[start];
             arr[start] = arr[end];
             arr[end] = temp;
         }
-
-        //结束循环之后，start 和 end 指向的位置即为 pivot 该存放的位置
-        //将 pivot 归位
-        int tmp = arr[i];
-        arr[i] = arr[start];
-        arr[start] = tmp;
-
+        int temp = arr[i];
+        arr[i] = arr[end];
+        arr[end] = temp;
         quickSort(arr,i,start-1);
         quickSort(arr,start+1,j);
     }

@@ -21,11 +21,6 @@ public class 长度为k的子数组能量值 {
 
     /**
      * 主要的操作是在这个方法，时间复杂度最坏为O（n*k）
-     * @param nums
-     * @param left
-     * @param right
-     * @param pre
-     * @return
      */
     public boolean isOrNot(int[] nums,int left,int right,boolean pre){
         if(pre){
