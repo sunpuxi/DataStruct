@@ -1,7 +1,5 @@
 package src.Array;
 
-import javafx.beans.binding.IntegerExpression;
-
 import java.util.PriorityQueue;
 import java.util.Queue;
 
@@ -55,9 +53,8 @@ public class findKMax {
             // 如果堆中的元素数量大于等于K个
             else {
                 int poll = queue.poll();
-                if(poll < num){
-                    queue.add(num);
-                }
+                // 需要注意堆中的元素数量始终为K个。
+                queue.add(Math.max(poll, num));
             }
         }
         // 返回堆中的最后一个元素
@@ -67,6 +64,6 @@ public class findKMax {
     public static void main(String[] args) {
         findKMax findKMax = new findKMax();
         int[] arr = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-        System.out.println(findKMax.findKth(arr, arr.length, 3));
+        System.out.println(findKMax.heapSortToGetKNumber(arr, 3));
     }
 }
