@@ -9,6 +9,7 @@ public class 好数对的数目 {
 
     /**
      * 枚举右边，维护左边
+     * 时间复杂度：O（n），空间：O（n）；
      */
     public static int numIdenticalPairs(int[] nums) {
         Map<Integer, List<Integer>> map = new HashMap<>();
