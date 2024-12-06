@@ -39,6 +39,7 @@ public class 最长无重复子序列 {
 
     /**
      * left 左指针初始化为 0 的情况。
+     * abba
      */
     public static int lengthOfLongestSubstring2(String str) {
         Map<Character, Integer> map = new HashMap<>();
